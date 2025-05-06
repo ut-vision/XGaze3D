@@ -61,7 +61,9 @@ pip install face_alignment
 - Install and activate/de-activate:
 ```bash
 pip install Metashape-2.2.1-cp37.cp38.cp39.cp310.cp311-abi3-linux_x86_64.whl
+## activate 
 LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libffi.so.7 python3 -c "import Metashape; Metashape.license.activate("<YOUR-LICENSE-KEY>"); print('Activated Metashape')"
+## de-activate
 LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libffi.so.7 python3 -c "import Metashape; Metashape.license.deactivate(); print('De-activated Metashape')"
 ```
 `LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libffi.so.7` is needed if you used a Conda environment.
