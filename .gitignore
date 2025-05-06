@@ -58,6 +58,8 @@ logs/*
 configs/data_path.yaml
 
 !assets/*.jpg
+!assets/meshlab.gif
+!assets/subject0000/frame0000/final_obj/mvs3d.jpg
 !src/face_model.txt
 
 
