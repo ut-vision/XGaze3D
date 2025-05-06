@@ -93,7 +93,8 @@ Download the updated files from [Google Drive](https://drive.google.com/drive/fo
 
 ```bash
 cd src
-LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libffi.so.7 python3 main_reconstruct.py \
+LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libffi.so.7 \
+python3 main_reconstruct.py \
   --xgaze_basedir <PATH_TO_ETH-XGaze> \
   --output_path <SAVE_DIR> \
   --resize 1200 \             # trade‑off between quality & speed
