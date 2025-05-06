@@ -177,5 +177,25 @@ python3 print_result.py --data_dir <SAVE_DIR>
 
 
 
-## License
+
+
+
+# Citation
+If you find the dataset useful for your research, please consider citing:
+```
+@article{qin2023domain,
+  title={Domain-adaptive full-face gaze estimation via novel-view-synthesis and feature disentanglement},
+  author={Qin, Jiawei and Shimoyama, Takuru and Zhang, Xucong and Sugano, Yusuke},
+  journal={arXiv preprint arXiv:2305.16140},
+  year={2023}
+}
+```
+:fire: **Huge thanks to Xucong Zhang** for contributing to the Metashape multi‑view reconstruction scripts!
+
+### License
 ETH‑XGaze, Metashape, and Places365 are subject to their respective licenses—please comply with their terms.
+
+
+
+## Contact
+If you have any questions, feel free to contact Jiawei Qin at jqin@iis.u-tokyo.ac.jp.
