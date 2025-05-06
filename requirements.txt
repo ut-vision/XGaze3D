@@ -1,0 +1,11 @@
+rich
+numpy
+omegaconf
+glob2
+opencv-python
+scipy
+matplotlib
+omegaconf
+h5py
+pandas
+seaborn
