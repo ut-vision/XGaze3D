@@ -29,22 +29,14 @@ With refined cameras and landmarks, the normalized XGaze dataset are less noisy,
 
 
 
-# What is this repository?
-The 
-This repo **fixes both issues** and enables:
+# Overview
+This repo contains:
 
 1. **Accurate multi‑view 3D reconstruction** for every frame (via Agisoft Metashape).  
 2. **Photo‑realistic novel‑view rendering** with PyTorch3D, giving synthetic images. The synthetic images show comparable performance with the real data under same head pose/gaze.
 
 
 ---
-
-
-The wheel that Agisoft ships is compiled against libffi 7 (symbol version LIBFFI_BASE_7.0).
-When you activate a Conda environment, its own lib/ directory is added to LD_LIBRARY_PATH and the first copy of libffi.so that the dynamic loader sees is Conda’s libffi 8.
-libp11‑kit.so.0 (loaded indirectly by Metashape) then asks that library for the symbol ffi_type_pointer@@LIBFFI_BASE_7.0, doesn’t find it, and Python raises the import error.
-
-Below are three practical ways to fix it – pick the one that fits your workflow.
 
 
 ## Installation
