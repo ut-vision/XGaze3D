@@ -109,10 +109,8 @@ class RenderXGaze(object):
 
 		self.light_metadata = self.xgaze.light_meta
 
-		self.output_normalized_dir = osp.join(self.output_dir, 'normalized_images'); os.makedirs(self.output_normalized_dir, exist_ok=True)
-		self.output_render_dir = osp.join(self.output_dir, 'render_images'); os.makedirs(self.output_render_dir, exist_ok=True)
-
-		
+		# self.output_render_dir = osp.join(self.output_dir, 'render_images')
+		self.output_render_dir = self.output_dir; os.makedirs(self.output_render_dir, exist_ok=True)
 
 
 		self.mean_calibration = {}
