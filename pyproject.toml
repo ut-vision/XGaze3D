@@ -1,0 +1,27 @@
+[project]
+name = "xgaze-3d"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "face-alignment>=1.4.1",
+    "glob2>=0.7",
+    "h5py>=3.11.0",
+    "matplotlib>=3.7.5",
+    "metashape",
+    "numpy>=1.24.4",
+    "omegaconf>=2.3.0",
+    "opencv-python>=4.11.0.86",
+    "pandas>=2.0.3",
+    "pytorch3d",
+    "rich>=14.0.0",
+    "scipy>=1.10.1",
+    "seaborn>=0.13.2",
+    "torch==2.2.0",
+    "torchvision==0.17.0",
+]
+
+[tool.uv.sources]
+pytorch3d = { git = "https://github.com/facebookresearch/pytorch3d.git" }
+metashape = { path = "Metashape-2.2.1-cp37.cp38.cp39.cp310.cp311-abi3-linux_x86_64.whl" }

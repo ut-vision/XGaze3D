@@ -45,28 +45,59 @@ This repo contains:
 ```bash
 git clone https://github.com/ut-vision/XGaze3D.git
 cd XGaze3D
+```
 
-## Conda 
+Download `Metashape-2.2.1-cp37.cp38.cp39.cp310.cp311-abi3-linux_x86_64.whl` from https://www.agisoft.com/downloads/installer, and put it inside `XGaze3D/`
+
+
+### [uv](https://docs.astral.sh/uv/) (Recommended)
+
+#### (Install uv)
+```bash 
+curl -Ls https://astral.sh/uv/install.sh | sh
+uv python install 3.8
+uv python pin 3.8 
+```
+If you downloaded a Metashape file with a different version, please modify `pyproject.toml`: `metashape = { path = "Metashape-2.2.1-cp37.cp38.cp39.cp310.cp311-abi3-linux_x86_64.whl" }` to your version.
+
+```bash
+uv sync
+source .venv/bin/activate
+```
+
+<details>
+<summary><b>Conda</b></summary>
+
+```bash
 conda create -n xgaze3d python=3.8
 conda activate xgaze3d
-
-
+pip install -r requirements.txt
 pip install torch==2.2.0 torchvision==0.17.0 --index-url https://download.pytorch.org/whl/cu121
 pip install "git+https://github.com/facebookresearch/pytorch3d.git"
-pip install -r requirements.txt
 pip install face_alignment
-```
-### Metashape
-- Download the Python 3 Module from https://www.agisoft.com/downloads/installer/
-- Install and activate/de-activate:
-```bash
 pip install Metashape-2.2.1-cp37.cp38.cp39.cp310.cp311-abi3-linux_x86_64.whl
-## activate 
-LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libffi.so.7 python3 -c "import Metashape; Metashape.license.activate("<YOUR-LICENSE-KEY>"); print('Activated Metashape')"
-## de-activate
-LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libffi.so.7 python3 -c "import Metashape; Metashape.license.deactivate(); print('De-activated Metashape')"
 ```
+
 `LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libffi.so.7` is needed if you used a Conda environment.
+
+</details>
+
+
+
+## Activate/de-activate Metashape
+
+```bash
+## activate 
+python activate_metashape.py
+# LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libffi.so.7 python activate_metashape.py
+
+## de-activate
+python deactivate_metashape.py
+# LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libffi.so.7 python deactivate_metashape.py
+```
+
+
+
 
 
 ## Data Preparation
@@ -95,8 +126,8 @@ Download the updated files from [Google Drive](https://drive.google.com/drive/fo
 
 ```bash
 cd src
-LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libffi.so.7 \
-python3 main_reconstruct.py \
+# LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libffi.so.7 python main_reconstruct.py \# for Conda 
+python main_reconstruct.py \
   --xgaze_basedir <PATH_TO_ETH-XGaze> \
   --output_path <SAVE_DIR> \
   --resize 1200 \             # trade‑off between quality & speed

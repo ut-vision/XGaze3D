@@ -67,3 +67,5 @@ configs/data_path.yaml
 *_nodeinfo
 
 outputs/
+
+Metashape-*.whl
